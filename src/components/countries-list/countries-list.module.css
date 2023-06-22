@@ -3,3 +3,26 @@
   flex-wrap: wrap;
   margin-left: 100px;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container button {
+  padding: 10px 15px;
+  margin-block: 30px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 470px) {
+  .listContainer {
+    margin-left: 10px;
+    justify-content: center;
+  }
+}
