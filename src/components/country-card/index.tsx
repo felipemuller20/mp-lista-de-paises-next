@@ -5,11 +5,12 @@ import { toSlug } from '@/utils/toSlug';
 
 type CountryCardProps = {
   flag: string,
-  name: string
+  name: string,
+  officialName: string,
 };
-export default function CountryCard({ flag, name }: CountryCardProps) {
+export default function CountryCard({ flag, name, officialName }: CountryCardProps) {
   return (
-    <Link className={ styles.cardContainer } href={ `/${toSlug(name)}` }>
+    <Link className={ styles.cardContainer } href={ `/${officialName}` }>
       <Image src={ flag } alt={ name } width={ 1000 } height={ 1000 } />
       <h2>{name}</h2>
     </Link>
