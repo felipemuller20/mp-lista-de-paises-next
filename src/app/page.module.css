@@ -1,0 +1,4 @@
+.skeletonContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

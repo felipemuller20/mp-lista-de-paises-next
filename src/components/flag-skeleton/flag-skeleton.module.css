@@ -1,0 +1,33 @@
+.container {
+  border: 1px solid black;
+  width: 280px;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.flag {
+  border: 1px solid black;
+  width: 200px;
+  height: 125px;
+  margin: 10px auto;
+  border-radius: 10px;
+  animation: skeletonPuls 1s linear infinite alternate;
+}
+
+.name {
+  border: 1px solid black;
+  width: 180px;
+  height: 25px;
+  margin: 10px auto;
+  border-radius: 10px;
+  animation: skeletonPuls 1s linear infinite alternate;
+}
+
+@keyframes skeletonPuls {
+  0% {
+    background-color: hsl(200, 20%, 100%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 80%);
+  }
+}

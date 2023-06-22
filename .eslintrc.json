@@ -1,0 +1,6 @@
+{
+  "extends": "@trybe/eslint-config-frontend/typescript",
+  "rules": {
+    "import/no-unresolved": "off"
+  }
+}

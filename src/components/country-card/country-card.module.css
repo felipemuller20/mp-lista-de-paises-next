@@ -1,0 +1,22 @@
+.cardContainer img {
+  width: 200px;
+  height: 125px;
+}
+
+.cardContainer {
+  flex-basis: 20%;
+  max-width: 20%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.cardContainer h2 {
+  font-size: 16px;
+  margin-top: 10px;
+}
