@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './country-card.module.css';
-import { toSlug } from '@/utils/toSlug';
 
 type CountryCardProps = {
   flag: string,

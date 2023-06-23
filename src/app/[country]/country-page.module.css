@@ -11,6 +11,8 @@
 
 .countryPage a {
   align-self: flex-start;
+  display: flex;
+  align-items: center;
 }
 
 .countryPage h1 {
@@ -36,4 +38,24 @@
   width: 300px;
   height: auto;
   border: 1px solid black;
+}
+
+@media (max-width: 740px) {
+  .countryPage main {
+    padding: 10px;
+    min-width: 300px;
+    flex-direction: column;
+  }
+
+  .countryPage img {
+    width: 80%;
+    min-width: 200px;
+  }
+
+  .countryPage h2 {
+    text-align: center;
+  }
+}
+@media (max-width: 450px) {
+  .countryPage { margin-inline: 20px; }
 }
