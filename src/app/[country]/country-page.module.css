@@ -34,6 +34,13 @@
   font-weight: 700;
 }
 
+.borderContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .countryPage img {
   width: 300px;
   height: auto;

@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { BsArrowLeft } from 'react-icons/bs';
 import styles from './country-page.module.css';
 import Language from '@/components/language';
-import BorderCountries from '@/components/border-countries';
+import { getBorders } from '@/utils/getBordersCountries';
+import CountryCard from '@/components/country-card';
 
 type CountryPageProps = {
   params: {
@@ -14,6 +15,7 @@ type CountryPageProps = {
 export default async function CountryPage({ params }: CountryPageProps) {
   const fetchData = await fetch(`https://restcountries.com/v3.1/name/${params.country}`);
   const country = await fetchData.json();
+  const borders = await getBorders(country[0].borders);
 
   if (!country) {
     <h1>País não encontrado</h1>;
@@ -58,11 +60,20 @@ export default async function CountryPage({ params }: CountryPageProps) {
       </main>
       <section>
         <h2>Países que fazem fronteira</h2>
-
         {
           country[0].borders ? (
-            /* @ts-expect-error Async Server Component */
-            <BorderCountries countries={ country[0].borders } />
+            <div className={ styles.borderContainer }>
+              {
+              borders.map((border) => (
+                <CountryCard
+                  officialName={ border.official }
+                  flag={ border.flag }
+                  name={ border.name }
+                  key={ border.name }
+                />
+              ))
+            }
+            </div>
           ) : (
             `Não há países que fazem fronteira com ${country[0].translations.por.common}.`
           )
