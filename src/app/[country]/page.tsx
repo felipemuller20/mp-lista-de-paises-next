@@ -5,6 +5,7 @@ import styles from './country-page.module.css';
 import Language from '@/components/language';
 import { getBorders } from '@/utils/getBordersCountries';
 import CountryCard from '@/components/country-card';
+import { Borders } from '@/types';
 
 type CountryPageProps = {
   params: {
@@ -15,7 +16,10 @@ type CountryPageProps = {
 export default async function CountryPage({ params }: CountryPageProps) {
   const fetchData = await fetch(`https://restcountries.com/v3.1/name/${params.country}`);
   const country = await fetchData.json();
-  const borders = await getBorders(country[0].borders);
+  let borders: Borders[] = [];
+  if (country[0].borders) {
+    borders = await getBorders(country[0].borders) || [];
+  }
 
   if (!country) {
     <h1>País não encontrado</h1>;
@@ -46,7 +50,8 @@ export default async function CountryPage({ params }: CountryPageProps) {
             <span className={ styles.title }>🗣️ Línguas faladas: </span>
           </p>
           {
-            Object.values<string>(country[0].languages).map((language) => (
+            country[0].languages
+            && Object.values<string>(country[0].languages).map((language) => (
               <Language key={ language } language={ language } />
             ))
           }
@@ -61,7 +66,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
       <section>
         <h2>Países que fazem fronteira</h2>
         {
-          country[0].borders ? (
+          borders.length > 0 ? (
             <div className={ styles.borderContainer }>
               {
               borders.map((border) => (

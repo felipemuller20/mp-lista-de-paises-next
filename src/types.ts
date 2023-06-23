@@ -12,3 +12,9 @@ export type Country = {
     };
   };
 };
+
+export type Borders = {
+  name: string;
+  flag: string;
+  official: string;
+};
