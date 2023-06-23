@@ -1,7 +1,9 @@
 .listContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-left: 100px;
+  margin-inline: 100px;
 }
 
 .container {
@@ -20,9 +22,15 @@
   cursor: pointer;
 }
 
+@media (max-width: 1025px) {
+  .listContainer {
+    margin-inline: 50px;
+  }
+}
+
 @media (max-width: 470px) {
   .listContainer {
-    margin-left: 10px;
+    margin-inline: 10px;
     justify-content: center;
   }
 }

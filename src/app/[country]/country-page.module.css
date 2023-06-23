@@ -59,3 +59,7 @@
 @media (max-width: 450px) {
   .countryPage { margin-inline: 20px; }
 }
+
+.errorLink {
+  color: blue;
+}
