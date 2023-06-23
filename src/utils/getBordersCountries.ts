@@ -5,6 +5,7 @@ export async function getBorders(country: string[]) {
     return {
       name: borderCountryInfo[0].translations.por.common,
       flag: borderCountryInfo[0].flags.png,
+      official: borderCountryInfo[0].name.official,
     };
   }));
 

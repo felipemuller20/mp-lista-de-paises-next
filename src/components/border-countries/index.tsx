@@ -14,7 +14,7 @@ export default async function BorderCountries({ countries }: BorderCountriesProp
       {
         borders.map((border) => (
           <CountryCard
-            officialName={ border.name }
+            officialName={ border.official }
             flag={ border.flag }
             name={ border.name }
             key={ border.name }

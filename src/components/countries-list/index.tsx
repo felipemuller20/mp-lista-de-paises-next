@@ -22,7 +22,7 @@ export default function CountriesList({ countries }: CountriesListProps) {
         {countries.slice(0, numCountries).map((country) => (
           <CountryCard
             key={ country.name.common }
-            officialName={ country.name.common }
+            officialName={ country.name.official }
             flag={ country.flags.png }
             name={ country.translations.por.common }
           />
